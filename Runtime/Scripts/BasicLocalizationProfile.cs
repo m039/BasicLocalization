@@ -7,7 +7,12 @@ using UnityEditor;
 
 namespace m039.BasicLocalization
 {
-
+    /// <summary>
+    /// The main class that stores all localization information, as translaiton, languages and selectors.
+    ///
+    /// It is primarily a data class that has few public functions for working with it. But there is a huge
+    /// invisible work that is done in the <see cref="EditorExtensions"/> class.
+    /// </summary>
     public class BasicLocalizationProfile : ScriptableObject
     {
 #if UNITY_EDITOR
@@ -27,14 +32,26 @@ namespace m039.BasicLocalization
 
         static BasicLocalizationProfile _sInstance;
 
+        /// <summary>
+        /// An instance of the main localization profile that is single for the whole application.
+        /// </summary>
         public static BasicLocalizationProfile Instance => _sInstance;
 
         #region Inspector
 
+        /// <summary>
+        /// A default language that will be used for most operations
+        /// </summary>
         public BasicLocalizationLanguage defaultLanguage;
 
+        /// <summary>
+        /// A list of all available languages for the current profile.
+        /// </summary>
         public List<BasicLocalizationLanguage> languages;
 
+        /// <summary>
+        /// A list of selectors which help of picking the right language for a translation.
+        /// </summary>
         [SerializeReference]
         public List<BaseLanguageSelector> languageSelectors = new List<BaseLanguageSelector>
         {
@@ -44,6 +61,9 @@ namespace m039.BasicLocalization
             new DefaultLanguageSelector()
         };
 
+        /// <summary>
+        /// The main data of the profile, its translations.
+        /// </summary>
         public List<BasicLocalizationTranslation> translations;
 
 #pragma warning disable 414
@@ -59,11 +79,22 @@ namespace m039.BasicLocalization
 
         Dictionary<string, BasicLocalizationTranslation> _translationByGuid;
 
-        public BasicLocalizationLanguage GetLanguage(string name)
+        /// <summary>
+        /// Finds and returns a language for the specified language id.
+        /// </summary>
+        /// <param name="languageId"></param>
+        /// <returns></returns>
+        public BasicLocalizationLanguage GetLanguage(string languageId)
         {
-            return GetLanguageById(name);
+            return GetLanguageByLanguageId(languageId);
         }
 
+        /// <summary>
+        /// Gets a text translation for the specified language and key.
+        /// </summary>
+        /// <param name="language"></param>
+        /// <param name="key"></param>
+        /// <returns></returns>
         public string GetTranslation(BasicLocalizationLanguage language, string key)
         {
             var translation = GetTranslationRawByKey(key);
@@ -75,6 +106,12 @@ namespace m039.BasicLocalization
             return null;
         }
 
+        /// <summary>
+        /// Gets a text translation for the specified language and key reference.
+        /// </summary>
+        /// <param name="language"></param>
+        /// <param name="keyReference"></param>
+        /// <returns></returns>
         public string GetTranslation(BasicLocalizationLanguage language, BasicLocalizationKeyReference keyReference)
         {
             if (language == null)
@@ -169,6 +206,9 @@ namespace m039.BasicLocalization
 
 #if UNITY_EDITOR
 
+        /// <summary>
+        /// Represents all a profile's data in a unified way.
+        /// </summary>
         public class SnapshotData
         {
             readonly public List<string> languages = new List<string>();
@@ -180,7 +220,10 @@ namespace m039.BasicLocalization
 
         internal EditorExtensions Editor => _editor ?? (_editor = new EditorExtensions(this));
 
-        public class EditorExtensions
+        /// <summary>
+        /// The main class for modifying the profile that is working in Editor.
+        /// </summary>
+        internal class EditorExtensions
         {
             BasicLocalizationProfile _profile;
 
@@ -395,7 +438,7 @@ namespace m039.BasicLocalization
 
                 foreach (var snLanguage in data.languages)
                 {
-                    var language = _profile.GetLanguageById(snLanguage);
+                    var language = _profile.GetLanguageByLanguageId(snLanguage);
                     if (language == null)
                     {
                         AddLanguage(snLanguage, forceSave: false);
@@ -408,7 +451,7 @@ namespace m039.BasicLocalization
 
                 foreach (var snLanguage in data.languages)
                 {
-                    languageLookUp.Add(_profile.GetLanguageById(snLanguage));
+                    languageLookUp.Add(_profile.GetLanguageByLanguageId(snLanguage));
                 }
 
                 // Add missed translations.
@@ -456,7 +499,7 @@ namespace m039.BasicLocalization
         }
 #endif
 
-        BasicLocalizationLanguage GetLanguageById(string languageId)
+        BasicLocalizationLanguage GetLanguageByLanguageId(string languageId)
         {
             if (languages != null && !string.IsNullOrEmpty(languageId))
             {

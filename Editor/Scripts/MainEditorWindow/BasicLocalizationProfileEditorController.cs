@@ -451,7 +451,7 @@ namespace m039.BasicLocalization
 
                                 EditorGUI.indentLevel++;
 
-                                var areaRect = EditorGUI.PrefixLabel(languageRect, new GUIContent(language.language));
+                                var areaRect = EditorGUI.PrefixLabel(languageRect, new GUIContent(language.languageId));
 
                                 EditorGUI.indentLevel--;
 
@@ -1007,7 +1007,7 @@ namespace m039.BasicLocalization
                     EditorGUIUtility.labelWidth,
                     rect.height
                     ),
-                    language.language
+                    language.languageId
                     );
 
                 var newLocale = (BasicLocalizationLocale)EditorGUI.ObjectField(
@@ -1027,7 +1027,7 @@ namespace m039.BasicLocalization
                 {
                     Undo.RegisterCompleteObjectUndo(_profile, "Changed Languages Info");
 
-                    language.language = newLanguage;
+                    language.languageId = newLanguage;
                     language.locale = newLocale;
 
                     EditorUtility.SetDirty(_profile);

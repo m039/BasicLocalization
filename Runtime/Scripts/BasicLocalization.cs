@@ -3,10 +3,16 @@ using UnityEngine;
 
 namespace m039.BasicLocalization
 {
+    /// <summary>
+    /// This class contains main public API for the Basic Localization package.
+    ///
+    /// It has access to the current selected localization profile (<see cref="BasicLocalizationProfile"/>).
+    ///
+    /// If you need, you can also override the current selected profily using <see cref="OverrideCurrentProfile(BasicLocalizationProfile)"/>.
+    /// </summary>
     public static class BasicLocalization
     {
         public const string ContextMenuRoot = "Basic Localization";
-
 
         static BasicLocalizationLanguage _currentLanguage;
 
@@ -16,19 +22,34 @@ namespace m039.BasicLocalization
 
         public delegate void OnLanguageChangedDelegate(BasicLocalizationLanguage language);
 
+        /// <summary>
+        /// Subscribe to this event to get notifications when the language changes.
+        /// </summary>
         static public event OnLanguageChangedDelegate OnLanguageChanged;
 
         #endregion
 
+        /// <summary>
+        /// Gets a localized text for a specified key reference.
+        /// </summary>
+        /// <param name="keyReference"></param>
+        /// <returns></returns>
         public static string GetTranslation(BasicLocalizationKeyReference keyReference)
         {
             return GetTranslation(GetCurrentProfile(), keyReference);
         }
 
+        /// <summary>
+        /// Gets a localized text for a specified key.
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
         public static string GetTranslation(string key)
         {
-            var profile = GetCurrentProfile();
-            return profile.GetTranslation(GetCurrentLanguage(profile), key);
+            return GetTranslation(GetCurrentProfile(), new BasicLocalizationKeyReference
+            {
+                key = key
+            });
         }
 
         static string GetTranslation(BasicLocalizationProfile profile, BasicLocalizationKeyReference keyReference)
@@ -36,18 +57,30 @@ namespace m039.BasicLocalization
             return profile?.GetTranslation(GetCurrentLanguage(profile), keyReference);
         }
 
+        /// <summary>
+        /// Returns a current selected language in the current localization profile.
+        /// </summary>
+        /// <returns></returns>
         public static BasicLocalizationLanguage GetCurrentLanguage()
         {
             var profile = GetCurrentProfile();
             return GetCurrentLanguage(profile);
         }
 
+        /// <summary>
+        /// This function travers the current selected profile and picks all its languages.
+        /// </summary>
+        /// <returns></returns>
         public static List<BasicLocalizationLanguage> GetAvailableLanguages()
         {
             var profile = GetCurrentProfile();
             return profile.languages;
         }
 
+        /// <summary>
+        /// Selects a language specified by the index. It works best with <see cref="GetAvailableLanguages"/>.
+        /// </summary>
+        /// <param name="index"></param>
         public static void SelectLanguageAt(int index)
         {
             var profile = GetCurrentProfile();
@@ -63,11 +96,17 @@ namespace m039.BasicLocalization
             SelectLanguage(profile, languages[index]);
         }
 
+        /// <summary>
+        /// Selects a next language in the current localization profile.
+        /// </summary>
         public static void SelectNextLanguage()
         {
             SelectLanguageWithOffset(+1);
         }
 
+        /// <summary>
+        /// Selects a previous language in the current localization profile.
+        /// </summary>
         public static void SelectPreviousLanguage()
         {
             SelectLanguageWithOffset(-1);
@@ -122,6 +161,11 @@ namespace m039.BasicLocalization
             }
         }
 
+        /// <summary>
+        /// By default, there is only one localization profile for the whole application,
+        /// but you can override this behaviour by this function.
+        /// </summary>
+        /// <param name="overrideProfile">A new localization profile or <code>null</code> if you want to reset the profile back.</param>
         public static void OverrideCurrentProfile(BasicLocalizationProfile overrideProfile)
         {
             var _oldLanguage = _currentLanguage;

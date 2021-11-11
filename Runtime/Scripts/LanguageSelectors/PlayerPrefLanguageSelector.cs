@@ -6,6 +6,9 @@ using UnityEditor;
 
 namespace m039.BasicLocalization
 {
+    /// <summary>
+    /// Picks a language based on the information from Player Prefs.
+    /// </summary>
     public class PlayerPrefLanguageSelector : BaseLanguageSelector
     {
         public override BasicLocalizationLanguage GetLanguage(BasicLocalizationProfile profile)

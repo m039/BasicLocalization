@@ -3,14 +3,19 @@ using UnityEngine.UI;
 
 namespace m039.BasicLocalization
 {
+    /// <summary>
+    /// An example of using <see cref=">BasicLocalization"/> with <see cref="Text"/>.
+    /// </summary>
     [RequireComponent(typeof(Text))]
     [AddComponentMenu(BasicLocalization.ContextMenuRoot + "/Localized Text")]
     public class LocalizedText : MonoBehaviour
     {
         #region Inspector
 
+        [Tooltip("A key for finding a translation.")]
         public BasicLocalizationKeyReference keyReference;
 
+        [Tooltip("Text that will be used if there is no translation.")]
         public string fallback;
 
         #endregion

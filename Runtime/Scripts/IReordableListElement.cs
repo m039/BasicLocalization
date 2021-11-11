@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace m039.BasicLocalization
 {
+    /// <summary>
+    /// A helper class for drawing an element of a list in Editor.
+    /// </summary>
     public interface IReordableListElement
     {
         public BasicLocalizationProfile CurrentProfile { get; set; }

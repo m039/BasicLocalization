@@ -2,6 +2,10 @@ using UnityEngine;
 
 namespace m039.BasicLocalization
 {
+    /// <summary>
+    /// This is a helper class that is capable to store and restore a language
+    /// information (by its id) from the disk.
+    /// </summary>
     public static class BasicLocalizationPlayerPrefUtils
     {
         const string CurrentLanguageKey = "localization.current_language_key";

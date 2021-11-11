@@ -2,11 +2,14 @@ using UnityEngine;
 
 namespace m039.BasicLocalization
 {
+    /// <summary>
+    /// Mostly, it is a demonstration of how the current localizalization profile can be overridden.
+    /// </summary>
     public class BasicLocalizationManager : MonoBehaviour
     {
         #region Inspector
 
-        [Tooltip("Select a localization profile specific for the current scene")]
+        [Tooltip("Selects a localization profile specific for the current scene")]
         [SerializeField]
         BasicLocalizationProfile _OverrideProfile;
 

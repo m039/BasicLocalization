@@ -6,6 +6,9 @@ using UnityEngine;
 
 namespace m039.BasicLocalization
 {
+    /// <summary>
+    /// Selects a language that is selected as default in the profile.
+    /// </summary>
     public class DefaultLanguageSelector : BaseLanguageSelector
     {
         public override BasicLocalizationLanguage GetLanguage(BasicLocalizationProfile profile)

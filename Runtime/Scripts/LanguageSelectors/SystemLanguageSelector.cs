@@ -9,6 +9,9 @@ using UnityEditor;
 
 namespace m039.BasicLocalization
 {
+    /// <summary>
+    /// Selects a best suitable language from the system.
+    /// </summary>
     public class SystemLanguageSelector : BaseLanguageSelector
     {
         public override BasicLocalizationLanguage GetLanguage(BasicLocalizationProfile profile)

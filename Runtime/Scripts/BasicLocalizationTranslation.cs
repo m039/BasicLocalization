@@ -1,7 +1,11 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace m039.BasicLocalization
 {
+    /// <summary>
+    /// Holds all information related to a translation.
+    /// </summary>
     [System.Serializable]
     public class BasicLocalizationTranslation
     {
@@ -14,19 +18,46 @@ namespace m039.BasicLocalization
             };
         }
 
+        /// <summary>
+        /// A phrase represantes a translation entity.
+        /// </summary>
         [System.Serializable]
         public struct Phrase
         {
+            /// <summary>
+            /// A language of the translation.
+            /// </summary>
             public BasicLocalizationLanguage language;
+
+            /// <summary>
+            /// A text translation.
+            /// </summary>
             public string text;
         }
 
+        /// <summary>
+        /// A key of translation.
+        /// In other words, it is the secondary identifier of the translation.
+        /// </summary>
         public string key;
 
+        /// <summary>
+        /// The main translation data.
+        /// </summary>
         public List<Phrase> phrases;
 
-        public string guid;
+        /// <summary>
+        /// In some cases key can be modified, but the guid is always the same.
+        /// It is a primary identifier of the translation.
+        /// </summary>
+        [SerializeField]
+        internal string guid;
 
+        /// <summary>
+        /// Gets a text for the specified language.
+        /// </summary>
+        /// <param name="language"></param>
+        /// <returns>Translation text or null if there is no one.</returns>
         public string GetTranslation(BasicLocalizationLanguage language)
         {
             if (phrases != null)

@@ -7,6 +7,9 @@ using UnityEditor;
 
 namespace m039.BasicLocalization
 {
+    /// <summary>
+    /// Selects a language which has a specified locale.
+    /// </summary>
     public class SpecificLocaleLanguageSelector : BaseLanguageSelector
     {
         public BasicLocalizationLocale locale;
