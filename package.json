@@ -15,5 +15,12 @@
   },
   "dependencies": {
     "com.unity.textmeshpro": "3.0.6"
-  }
+  },
+  "samples": [
+    {
+      "displayName": "Hello Sample",
+      "description": "This sample contains a scene with hello in different languages. The sample is self contained.",
+      "path": "Samples~/HelloSample"
+    }
+  ]
 }
