@@ -20,7 +20,12 @@
     {
       "displayName": "Hello Sample",
       "description": "This sample contains a scene with hello in different languages. The sample is self contained.",
-      "path": "Samples~/HelloSample"
+      "path": "Samples~/HelloTextSample"
+    },
+    {
+      "displayName": "Hello TMPro Sample",
+      "description": "This sample contains a scene with hello in different languages. The sample is self contained and uses TextMeshPro.",
+      "path": "Samples~/HelloTMProSample"
     }
   ]
 }

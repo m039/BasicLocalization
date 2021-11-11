@@ -4,7 +4,7 @@ using m039.BasicLocalization;
 using System;
 using System.Collections.Generic;
 
-public class BasicLocalizationHelloSample : MonoBehaviour
+public class BasicLocalizationHelloTMProSample : MonoBehaviour
 {
     #region Inspector
 

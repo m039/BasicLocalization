@@ -66,7 +66,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 280c384fb098fec48b19dd2f088d66be, type: 3}
-  m_Name: BasicLocalizationSampleProfile
+  m_Name: BasicLocalizationHelloTMProSampleProfile
   m_EditorClassIdentifier: 
   defaultLanguage: {fileID: 3465513676864700625}
   languages:

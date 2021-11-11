@@ -1,0 +1,154 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8987412193943374963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf275c55add28c04fad349b4b61ab7c9, type: 3}
+  m_Name: Spanish
+  m_EditorClassIdentifier: 
+  language: Spanish
+  locale: {fileID: 11400000, guid: e2a2de5384a6eeb429b2bfe207560c6a, type: 2}
+--- !u!114 &-7936653109286501470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf275c55add28c04fad349b4b61ab7c9, type: 3}
+  m_Name: German
+  m_EditorClassIdentifier: 
+  language: German
+  locale: {fileID: 11400000, guid: 080df58bd2f5b4e48a344d8c77cc43d2, type: 2}
+--- !u!114 &-4893007806928154986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf275c55add28c04fad349b4b61ab7c9, type: 3}
+  m_Name: Russian
+  m_EditorClassIdentifier: 
+  language: Russian
+  locale: {fileID: 11400000, guid: 6e5d895ac27a14249851005136d1ec6c, type: 2}
+--- !u!114 &-3379699735952139748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf275c55add28c04fad349b4b61ab7c9, type: 3}
+  m_Name: Italian
+  m_EditorClassIdentifier: 
+  language: Italian
+  locale: {fileID: 11400000, guid: d14ff5572bf4f044a8ac37d4fc338bf4, type: 2}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 280c384fb098fec48b19dd2f088d66be, type: 3}
+  m_Name: BasicLocalizationHelloSampleProfile
+  m_EditorClassIdentifier: 
+  defaultLanguage: {fileID: 3465513676864700625}
+  languages:
+  - {fileID: 3465513676864700625}
+  - {fileID: -8987412193943374963}
+  - {fileID: 2674707252875974393}
+  - {fileID: -7936653109286501470}
+  - {fileID: -4893007806928154986}
+  - {fileID: 1038468846484242980}
+  - {fileID: -3379699735952139748}
+  languageSelectors:
+  - id: 0
+  - id: 1
+  - id: 2
+  translations:
+  - key: Hello
+    phrases:
+    - language: {fileID: 3465513676864700625}
+      text: Hello
+    - language: {fileID: -8987412193943374963}
+      text: Hola
+    - language: {fileID: 2674707252875974393}
+      text: Salut!
+    - language: {fileID: -7936653109286501470}
+      text: Hallo
+    - language: {fileID: -4893007806928154986}
+      text: "\u041F\u0440\u0438\u0432\u0435\u0442"
+    - language: {fileID: 1038468846484242980}
+      text: "Ol\xE1"
+    - language: {fileID: -3379699735952139748}
+      text: Ciao
+    guid: bf85825e-de4e-48a4-b73e-7bbe908ebee9
+  mainAsset: 0
+  references:
+    version: 1
+    00000000:
+      type: {class: CommandLineLanguageSelector, ns: m039.BasicLocalization, asm: BasicLocalization}
+      data:
+        commandLineArguments: -language=
+    00000001:
+      type: {class: SystemLanguageSelector, ns: m039.BasicLocalization, asm: BasicLocalization}
+    00000002:
+      type: {class: DefaultLanguageSelector, ns: m039.BasicLocalization, asm: BasicLocalization}
+--- !u!114 &1038468846484242980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf275c55add28c04fad349b4b61ab7c9, type: 3}
+  m_Name: Portuguese
+  m_EditorClassIdentifier: 
+  language: Portuguese
+  locale: {fileID: 11400000, guid: 2703b9d066fc9994d9ba9a4b392474a4, type: 2}
+--- !u!114 &2674707252875974393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf275c55add28c04fad349b4b61ab7c9, type: 3}
+  m_Name: French
+  m_EditorClassIdentifier: 
+  language: French
+  locale: {fileID: 11400000, guid: 7a4eb697f8136484d88c7e80bedaafe4, type: 2}
+--- !u!114 &3465513676864700625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf275c55add28c04fad349b4b61ab7c9, type: 3}
+  m_Name: English
+  m_EditorClassIdentifier: 
+  language: English
+  locale: {fileID: 11400000, guid: c433c8f61ce59dd47a35bf39b9ae9b92, type: 2}
