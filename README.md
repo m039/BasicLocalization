@@ -16,7 +16,7 @@ Limitations:
 
 ## Preview
 
-This is a preview of the main localization window. You can open it from `Window -> Basic Localization` after you've installed the package.
+This is preview of the main localization window. You can open it from `Window -> Basic Localization` after you've installed the package.
 
 ![Demo](./Documentation~/profile_settings_preview.gif)
 
