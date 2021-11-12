@@ -12,9 +12,14 @@ Limitations:
 
 1. The library can handle only text, not images or audio.
 
+## Preview
+
+This is a preview of the main localization window. You can open it from `Window -> Basic Localization` after you've installed the package.
+
+[![Demo](./Documentations~/profile_settings_preview.gif)]()
 ## Installation
 
 The Basic Localization package can be added by adding `com.m039.basic-localization` through the "Add package from git URL..." option in the Package Manager.
 
-# Thanks
-Thank you developers of [Lean Localization](http://carloswilkes.com/Documentation/LeanLocalization) and [Unity Localization](https://docs.unity3d.com/Packages/com.unity.localization@1.0/manual/index.html) for inspiration and some good ideas.
+## Thanks
+Thank developers of [Lean Localization](http://carloswilkes.com/Documentation/LeanLocalization) and [Unity Localization](https://docs.unity3d.com/Packages/com.unity.localization@1.0/manual/index.html) for inspiration and some good ideas.
