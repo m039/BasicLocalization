@@ -36,7 +36,7 @@ public class BasicLocalizationHelloSample : MonoBehaviour
         {
             options.Add(new Dropdown.OptionData
             {
-                text = language.language
+                text = language.languageId
             });
         }
 

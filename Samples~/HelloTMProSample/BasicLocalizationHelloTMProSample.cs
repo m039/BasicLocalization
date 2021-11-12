@@ -36,7 +36,7 @@ public class BasicLocalizationHelloTMProSample : MonoBehaviour
         {
             options.Add(new TMP_Dropdown.OptionData
             {
-                text = language.language
+                text = language.languageId
             });
         }
 
