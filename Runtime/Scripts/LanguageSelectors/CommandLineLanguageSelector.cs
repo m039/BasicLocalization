@@ -8,6 +8,9 @@ using UnityEditor;
 #endif
 namespace m039.BasicLocalization
 {
+    /// <summary>
+    /// Picks a language using a command line argument.
+    /// </summary>
     public class CommandLineLanguageSelector : BaseLanguageSelector
     {
         public string commandLineArguments = "-language=";
