@@ -21,5 +21,5 @@ This is a preview of the main localization window. You can open it from `Window 
 
 The Basic Localization package can be added by adding `com.m039.basic-localization` through the "Add package from git URL..." option in the Package Manager.
 
-## Thanks
+## Acknowledgements
 Thank developers of [Lean Localization](http://carloswilkes.com/Documentation/LeanLocalization) and [Unity Localization](https://docs.unity3d.com/Packages/com.unity.localization@1.0/manual/index.html) for inspiration and some good ideas.
