@@ -1,3 +1,5 @@
+![Logo](./Documentation~/cover.png)
+
 # Basic Localization
 
 Basic Localization is a Unity package that allows you easily and quickly translate your project into different languages.
