@@ -16,7 +16,7 @@ Limitations:
 
 This is a preview of the main localization window. You can open it from `Window -> Basic Localization` after you've installed the package.
 
-[![Demo](./Documentations~/profile_settings_preview.gif)]()
+[![Demo](./Documentation~/profile_settings_preview.gif)]()
 ## Installation
 
 The Basic Localization package can be added by adding `com.m039.basic-localization` through the "Add package from git URL..." option in the Package Manager.
