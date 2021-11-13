@@ -1,6 +1,4 @@
-![Logo](./Documentation~/cover.png)
-
-# About
+# Basic Localization
 
 Basic Localization is a Unity package that allows you easily and quickly translate your project into different languages.
 
@@ -14,15 +12,19 @@ Limitations:
 
 1. The library can handle only text, not images or audio.
 
-## Preview
+# Quickstart Guide
+
+[![Quickstart Guide](http://img.youtube.com/vi/XbBdRPNxauk/0.jpg)](https://youtu.be/XbBdRPNxauk)
+
+# Preview
 
 This is preview of the main localization window. You can open it from `Window -> Basic Localization` after you've installed the package.
 
 ![Demo](./Documentation~/profile_settings_preview.gif)
 
-## Installation
+# Installation
 
 The Basic Localization package can be added by adding `https://github.com/m039/BasicLocalization.git` through the "Add package from git URL..." option in the Package Manager.
 
-## Acknowledgements
+# Acknowledgements
 Thank developers of [Lean Localization](http://carloswilkes.com/Documentation/LeanLocalization) and [Unity Localization](https://docs.unity3d.com/Packages/com.unity.localization@1.0/manual/index.html) for inspiration and some good ideas.
