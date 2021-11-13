@@ -1,6 +1,6 @@
 # Basic Localization
 [![Unity Version](https://img.shields.io/badge/Unity-2019.3%2B-blue)](https://unity3d.com/get-unity/download)
-[![Version](https://img.shields.io/github/package-json/v/m039/BasicLocalization)](https://github.com/m039/BasicLocalization/releases)
+![Version](https://img.shields.io/github/package-json/v/m039/BasicLocalization)]
 
 Basic Localization is a Unity package that allows you easily and quickly translate your project into different languages.
 
