@@ -1,6 +1,6 @@
 {
   "name": "com.m039.basic-localization",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "displayName": "Basic Localization",
   "description": "The Basic Localization package allows you easily and quickly translate your project to another language.\n\nThis package is well suited for quick prototypes and jam games, but it is also tested for large amount of data.\n\nBasic Localization also uses intuitive UI for managing all translations.",
   "unity": "2019.3",
