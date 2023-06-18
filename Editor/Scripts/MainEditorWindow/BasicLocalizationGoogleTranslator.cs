@@ -54,7 +54,10 @@ namespace m039.BasicLocalization
             for (int i = 0; i < commands.Count; i++)
             {
                 var command = commands[i];
-                EditorUtility.DisplayProgressBar("Translating", command.GetInfo(), (i + 1) / commands.Count);
+                if (EditorUtility.DisplayCancelableProgressBar("Translating", command.GetInfo(), (float)(i + 1) / commands.Count))
+                {
+                    break;
+                }
                 command.Run();
             }
 
