@@ -36,6 +36,9 @@ namespace m039.BasicLocalization
 
                 foreach (var language in languages)
                 {
+                    if (language == defaultLanguage)
+                        continue;
+
                     var text = translation.GetTranslation(language);
                     if (!profile.editorData.translateOnlyEmptyFields || string.IsNullOrEmpty(text))
                     {
