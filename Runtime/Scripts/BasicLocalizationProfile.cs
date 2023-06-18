@@ -73,7 +73,17 @@ namespace m039.BasicLocalization
 
 #pragma warning restore 414
 
-        #endregion
+#if UNITY_EDITOR
+        public EditorData editorData = new EditorData();
+
+        [System.Serializable]
+        public class EditorData {
+            public bool translateOnlyEmptyFields = true;
+        }
+
+#endif
+
+#endregion
 
         Dictionary<string, BasicLocalizationTranslation> _translationsByKey;
 

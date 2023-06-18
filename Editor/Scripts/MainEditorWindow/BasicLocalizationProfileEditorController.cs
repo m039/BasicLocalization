@@ -17,7 +17,7 @@ namespace m039.BasicLocalization
 
         const int TabTranslationsIndex = 1;
 
-        const int TabExports = 2;
+        const int TabTools = 2;
 
 #if BASIC_LOCALIZATION_DEBUG
         const int TabDebug = 3;
@@ -26,7 +26,7 @@ namespace m039.BasicLocalization
         static string[] Tabs = new string[] {
             "Languages",
             "Translations",
-            "Export / Import",
+            "Tools",
 #if BASIC_LOCALIZATION_DEBUG
             "Debug"
 #endif
@@ -83,9 +83,9 @@ namespace m039.BasicLocalization
             {
                 _translationsDrawHelper.Draw(profile, _useMinHeight);
             }
-            else if (_selectedTab == TabExports)
+            else if (_selectedTab == TabTools)
             {
-                DrawExportAndImportControls(profile);
+                DrawToolsControls(profile);
             }
 #if BASIC_LOCALIZATION_DEBUG
             else if (_selectedTab == TabDebug)
@@ -154,8 +154,10 @@ namespace m039.BasicLocalization
         }
 #endif
 
-        static void DrawExportAndImportControls(BasicLocalizationProfile localizationProfile)
+        static void DrawToolsControls(BasicLocalizationProfile localizationProfile)
         {
+            GUILayout.Label("Export / Import", EditorStyles.boldLabel);
+
             // Export
 
             if (GUILayout.Button("Export As CSV File"))
@@ -170,6 +172,20 @@ namespace m039.BasicLocalization
             {
                 var path = EditorUtility.OpenFilePanel("Import Translations", string.Empty, "csv");
                 BasicLocalizationCSVConverter.Import(localizationProfile, path);
+            }
+
+            EditorGUILayout.Space(PaddingBig);
+
+            // Google translate.
+            GUILayout.Label("Google Translate", EditorStyles.boldLabel);
+
+            localizationProfile.editorData.translateOnlyEmptyFields =
+                GUILayout.Toggle(localizationProfile.editorData.translateOnlyEmptyFields,
+                    "Translate Only Empty Fields");
+
+            if (GUILayout.Button("Translate"))
+            {
+                BasicLocalizationGoogleTranslator.Translate(localizationProfile);
             }
         }
 
@@ -1029,6 +1045,7 @@ namespace m039.BasicLocalization
 
                     language.languageId = newLanguage;
                     language.locale = newLocale;
+                    language.name = language.languageId;
 
                     EditorUtility.SetDirty(_profile);
                 }
